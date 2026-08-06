@@ -46,6 +46,13 @@ def run_data_quality_checks(df: pd.DataFrame, settings: Settings, report_name: s
             "is_fresh": bool((df["age_days"] > settings.freshness_threshold_days).sum() == 0),
         },
     }
+    checks = {
+        "required_fields_complete": all(value == 1.0 for value in completeness.values()),
+        "paper_id_unique": bool(report["uniqueness"]["paper_id_unique"]),
+        "data_is_fresh": bool(report["freshness"]["is_fresh"]),
+    }
+    report["checks"] = checks
+    report["status"] = "PASS" if all(checks.values()) else "FAIL"
     write_json(report_path, report)
     return report
 

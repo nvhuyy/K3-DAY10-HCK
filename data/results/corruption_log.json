@@ -1,0 +1,59 @@
+{
+  "seed": 10,
+  "source_rows": 24,
+  "corrupted_rows": 23,
+  "requested_frozen_target_ids": [
+    "10.1007/s10115-026-02792-4",
+    "10.3390/buildings16132637",
+    "10.54254/2753-8818/2026.dl34055",
+    "10.55041/isjem07213"
+  ],
+  "affected_frozen_target_ids": [
+    "10.1007/s10115-026-02792-4",
+    "10.3390/buildings16132637",
+    "10.54254/2753-8818/2026.dl34055",
+    "10.55041/isjem07213"
+  ],
+  "overlaps_frozen_test_set": true,
+  "operations": [
+    {
+      "scenario": "drop_records",
+      "paper_ids": [
+        "10.1007/s10115-026-02792-4",
+        "10.54254/2753-8818/2026.dl34055"
+      ],
+      "count": 2
+    },
+    {
+      "scenario": "blank_summary",
+      "paper_ids": [
+        "10.3390/buildings16132637"
+      ],
+      "count": 1
+    },
+    {
+      "scenario": "stale_date",
+      "paper_ids": [
+        "10.55041/isjem07213"
+      ],
+      "count": 1,
+      "value": "2000-01-01"
+    },
+    {
+      "scenario": "add_noise",
+      "paper_ids": [
+        "10.3390/buildings16132637",
+        "10.55041/isjem07213"
+      ],
+      "count": 2,
+      "marker": "!!! CORRUPTED_NOISE_9f3a irrelevant random tokens zxqv 0000 !!!"
+    },
+    {
+      "scenario": "duplicate",
+      "paper_ids": [
+        "10.3390/buildings16132637"
+      ],
+      "count": 1
+    }
+  ]
+}

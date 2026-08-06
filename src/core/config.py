@@ -44,6 +44,7 @@ class Paths:
 class Settings:
     llm_provider: str
     model_name: str
+    max_output_tokens: int
     google_api_key: str | None
     openai_api_key: str | None
     anthropic_api_key: str | None
@@ -86,8 +87,8 @@ def load_settings(project_dir: Path | None = None) -> Settings:
         clean_json=data_dir / "clean" / "papers_clean.json",
         chroma_dir=data_dir / "chroma",
         embeddings_json=data_dir / "embeddings" / "papers_embeddings.json",
-        corrupted_clean_csv=data_dir / "clean" / "papers_clean_corrupted.csv",
-        corrupted_clean_json=data_dir / "clean" / "papers_clean_corrupted.json",
+        corrupted_clean_csv=data_dir / "clean" / "papers_corrupted.csv",
+        corrupted_clean_json=data_dir / "clean" / "papers_corrupted.json",
         corrupted_embeddings_json=data_dir / "embeddings" / "papers_embeddings_corrupted.json",
         repaired_clean_csv=data_dir / "clean" / "papers_clean_repaired.csv",
         repaired_clean_json=data_dir / "clean" / "papers_clean_repaired.json",
@@ -111,6 +112,7 @@ def load_settings(project_dir: Path | None = None) -> Settings:
     return Settings(
         llm_provider=os.getenv("LLM_PROVIDER", "gemini"),
         model_name=os.getenv("LLM_MODEL", "gemini-2.5-flash"),
+        max_output_tokens=max(128, int(os.getenv("LLM_MAX_TOKENS", "2048"))),
         google_api_key=os.getenv("GOOGLE_API_KEY"),
         openai_api_key=os.getenv("OPENAI_API_KEY"),
         anthropic_api_key=os.getenv("ANTHROPIC_API_KEY"),

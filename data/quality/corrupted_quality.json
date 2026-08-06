@@ -1,0 +1,25 @@
+{
+  "report_name": "corrupted_quality.json",
+  "row_count": 23,
+  "completeness": {
+    "paper_id": 1.0,
+    "title": 1.0,
+    "summary": 0.913
+  },
+  "uniqueness": {
+    "paper_id_unique": false,
+    "duplicate_paper_ids": 1
+  },
+  "freshness": {
+    "stale_rows": 1,
+    "freshness_threshold_days": 180,
+    "max_age_days": 9714,
+    "is_fresh": false
+  },
+  "checks": {
+    "required_fields_complete": false,
+    "paper_id_unique": false,
+    "data_is_fresh": false
+  },
+  "status": "FAIL"
+}
