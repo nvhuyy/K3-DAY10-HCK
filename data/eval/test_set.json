@@ -1,0 +1,110 @@
+[
+  {
+    "id": "q1",
+    "question_type": "factual",
+    "question": "T\u00f3m t\u1eaft ch\u00ednh c\u1ee7a b\u00e0i vi\u1ebft v\u1ec1 'Reliable retrieval-augmented feature generation with large language model reasoning' l\u00e0 g\u00ec?",
+    "ground_truth": "Abstract Feature generation can significantly enhance learning outcomes, particularly for tasks with limited data. An effective way to improve feature generation is to expand the current feature space using existing features and enriching the informational content. However, generating new, interpretable features usually requires domain-specific knowledge on top of the existing features. In this paper, we introduce a Retrieval-Augmented Feature Generation method, RAFG, to generate useful and explainable features specific to domain classification tasks. To increase the interpretability of the generated features, we conduct knowledge retrieval among the existing features in the domain to identify potential feature associations. These associations are expected to help generate useful features. Moreover, we develop a framework based on large language models (LLMs) for feature generation with reasoning to evaluate their semantic relevance, causal alignment, and expected utility for the downstream task. To mitigate the risk of overconfident or unsupported reasoning, we further introduce a counterfactual validation mechanism that compares reasoning-based predictions with observed performance changes. Experiments across several datasets in medical, economic, and geographic domains show that our RAFG method can produce high-quality, meaningful features and significantly improve classification performance compared with baseline methods.",
+    "ground_truth_doc_ids": [
+      "10.1007/s10115-026-02792-4"
+    ]
+  },
+  {
+    "id": "q2",
+    "question_type": "factual",
+    "question": "T\u00e1c gi\u1ea3 c\u1ee7a b\u00e0i vi\u1ebft v\u1ec1 'Reliable retrieval-augmented feature generation with large language model reasoning' l\u00e0 ai?",
+    "ground_truth": "Jinghan Zhang, Xinhao Zhang, Fengran Mo, Dakshak Keerthi Chandra, Yu-Zhong Chen, Fei Xie, Kunpeng Liu",
+    "ground_truth_doc_ids": [
+      "10.1007/s10115-026-02792-4"
+    ]
+  },
+  {
+    "id": "q3",
+    "question_type": "factual",
+    "question": "B\u00e0i vi\u1ebft 'Reliable retrieval-augmented feature generation with large language model reasoning' \u0111\u01b0\u1ee3c xu\u1ea5t b\u1ea3n v\u00e0o ng\u00e0y n\u00e0o?",
+    "ground_truth": "2026-12-01",
+    "ground_truth_doc_ids": [
+      "10.1007/s10115-026-02792-4"
+    ]
+  },
+  {
+    "id": "q4",
+    "question_type": "factual",
+    "question": "T\u00f3m t\u1eaft ch\u00ednh c\u1ee7a b\u00e0i vi\u1ebft v\u1ec1 'An Agentic AI System for Roof Design Compliance Using Computer Vision, Retrieval-Augmented Generation and Large Language Models' l\u00e0 g\u00ec?",
+    "ground_truth": "Designers, engineers, and building officials face increasing pressure to accelerate and improve the accuracy of design review for buildings and infrastructure. Roof assemblies and rooftop structures are particularly challenging due to the complexity and fragmentation of regulatory requirements, especially in jurisdictions such as Florida, where compliance must be verified across both the residential and commercial volumes of the Florida Building Code (FBC). The resulting review process is technically demanding and time-intensive, imposing significant cognitive and operational burdens on practitioners and under-resourced public agencies. To address these challenges, this study proposes and evaluates an agentic artificial intelligence (AI) framework for automated code compliance checking of roof assemblies and rooftop structures. The framework employs a multi-agent architecture in which specialized AI agents collaboratively interpret regulatory provisions and evaluate roof design parameters across four core modules: data preprocessing and code ingestion, rule-based and semantic analysis, results visualization, and iterative validation. YOLO11m-seg and Mask R-CNN were used for element detection and segmentation, and the system was developed using 150 design projects, including roof plans, section details, and specifications. Four large language models from two families (Mistral and GPT) were comparatively evaluated on standardized compliance tasks. The framework was then tested on a held-out portfolio of 15 distinct roof-design projects comprising 60 code-compliance decisions derived from the FBC 2023, with performance measured by precision, recall, F1-score, and accuracy. GPT-5.4 achieved the highest overall performance (F1 = 0.97; accuracy = 97%). Because the reasoning and vision components were evaluated separately rather than as an integrated end-to-end pipeline, and the scope was limited to one jurisdiction and two drawing types, broader code coverage and production-setting validation are needed before claims of generality. Nonetheless, the results suggest that agentic AI can meaningfully support compliance review and reduce reviewer burden in roof-design permitting.",
+    "ground_truth_doc_ids": [
+      "10.3390/buildings16132637"
+    ]
+  },
+  {
+    "id": "q5",
+    "question_type": "factual",
+    "question": "T\u00e1c gi\u1ea3 c\u1ee7a b\u00e0i vi\u1ebft v\u1ec1 'An Agentic AI System for Roof Design Compliance Using Computer Vision, Retrieval-Augmented Generation and Large Language Models' l\u00e0 ai?",
+    "ground_truth": "Nawari O. Nawari, Oluwatoyin O. Lawal",
+    "ground_truth_doc_ids": [
+      "10.3390/buildings16132637"
+    ]
+  },
+  {
+    "id": "q6",
+    "question_type": "factual",
+    "question": "B\u00e0i vi\u1ebft 'An Agentic AI System for Roof Design Compliance Using Computer Vision, Retrieval-Augmented Generation and Large Language Models' \u0111\u01b0\u1ee3c xu\u1ea5t b\u1ea3n v\u00e0o ng\u00e0y n\u00e0o?",
+    "ground_truth": "2026-07-02",
+    "ground_truth_doc_ids": [
+      "10.3390/buildings16132637"
+    ]
+  },
+  {
+    "id": "q7",
+    "question_type": "factual",
+    "question": "T\u00f3m t\u1eaft ch\u00ednh c\u1ee7a b\u00e0i vi\u1ebft v\u1ec1 'Hallucination in Large Language Models and Retrieval-Augmented Generation: Mechanisms, Mitigation, and Evaluation' l\u00e0 g\u00ec?",
+    "ground_truth": "Large language models have demonstrated strong generative capability in question answering, dialogue, and other knowledge-intensive tasks. However, their outputs remain vulnerable to hallucination, including factual errors, unsupported claims, spurious citations, and distorted reasoning. Retrieval-augmented generation (RAG) has been proposed as a practical remedy because it supplements parametric knowledge with external evidence retrieved at inference time. Yet RAG does not guarantee truthfulness or attribution by default. Errors may arise during query formulation, document retrieval, evidence aggregation, and answer grounding. This paper reviews the relationship between hallucination and RAG from three perspectives: mechanism, mitigation, and evaluation. First, the major causes of hallucination in both vanilla LLMs and RAG-enhanced systems are analyzed. Second, the principal mitigation strategies are organized into retrieval optimization, evidence-grounded generation, and post-generation verification. Third, the main evaluation dimensions are examined, including factuality, faithfulness, attribution quality, and retrieval relevance. It is argued that RAG should not be treated as a complete solution to hallucination. Its value lies in enabling externally grounded generation, but its effectiveness depends on the reliability of retrieval, the fidelity of evidence use, and the rigor of evaluation. Future work should prioritize attribution-aware generation, conflict-sensitive reasoning, and unified evaluation protocols for trustworthy LLM systems.",
+    "ground_truth_doc_ids": [
+      "10.54254/2753-8818/2026.dl34055"
+    ]
+  },
+  {
+    "id": "q8",
+    "question_type": "factual",
+    "question": "T\u00e1c gi\u1ea3 c\u1ee7a b\u00e0i vi\u1ebft v\u1ec1 'Hallucination in Large Language Models and Retrieval-Augmented Generation: Mechanisms, Mitigation, and Evaluation' l\u00e0 ai?",
+    "ground_truth": "Haopeng Yang",
+    "ground_truth_doc_ids": [
+      "10.54254/2753-8818/2026.dl34055"
+    ]
+  },
+  {
+    "id": "q9",
+    "question_type": "factual",
+    "question": "B\u00e0i vi\u1ebft 'Hallucination in Large Language Models and Retrieval-Augmented Generation: Mechanisms, Mitigation, and Evaluation' \u0111\u01b0\u1ee3c xu\u1ea5t b\u1ea3n v\u00e0o ng\u00e0y n\u00e0o?",
+    "ground_truth": "2026-06-01",
+    "ground_truth_doc_ids": [
+      "10.54254/2753-8818/2026.dl34055"
+    ]
+  },
+  {
+    "id": "q10",
+    "question_type": "factual",
+    "question": "T\u00f3m t\u1eaft ch\u00ednh c\u1ee7a b\u00e0i vi\u1ebft v\u1ec1 'Speculative Retrieval-Augmented Generation for Cost-Efficient Large Language Model Inference' l\u00e0 g\u00ec?",
+    "ground_truth": "Abstract - This work focuses on the two crucial bottlenecks in Retrieval-Augmented Generation (RAG): high inference latency and expensive computation cost. RAG enhances the factual correctness of Large Language Models (LLMs) by utilizing external knowledge sources; However, the auto-To achieve a good recall, the system applies a two-way retrieval mechanism: Dense retrieval: This module uses BAAI/bge-small-en-v1.5 to create a 384-dimensional embedding space, where queries and documents are mapped. The embeddings are stored in a FAISS IndexFlatL2. Sparse retrieval: This module uses TF-IDF vectorization to capture an exact keyword match. Reranking: A simple heuristic mechanism of matching substrings of the query terms in the documents selected to perform the final step of ranking them for prompt introduce a novel speculative RAG framework that combines hybrid retrieval with speculative decoding. Our framework employs hybrid dense vector search (BGE-small) and sparse keyword search (TF-IDF) for enhanced recall followed by a lightweight re-ranker model. A compact draft model (TinyLlama-1.1B) makes tentative future token generation, then a larger verifier model (Mistral-7B) checks the correctness of the candidate token. Empirical experiments demonstrate 33% and 29% improvement in inference latency and token reduction, respectively, compared to the baseline of a typical 7B model, while retaining 94% accuracy on factoid tasks. Key Words: Retrieval-Augmented Generation, Speculative Decoding, Large Language Models, Inference Optimization, Hybrid Retrieval",
+    "ground_truth_doc_ids": [
+      "10.55041/isjem07213"
+    ]
+  },
+  {
+    "id": "q11",
+    "question_type": "factual",
+    "question": "T\u00e1c gi\u1ea3 c\u1ee7a b\u00e0i vi\u1ebft v\u1ec1 'Speculative Retrieval-Augmented Generation for Cost-Efficient Large Language Model Inference' l\u00e0 ai?",
+    "ground_truth": "Dr. Sumalatha P, Manoj Kumar",
+    "ground_truth_doc_ids": [
+      "10.55041/isjem07213"
+    ]
+  },
+  {
+    "id": "q12",
+    "question_type": "factual",
+    "question": "B\u00e0i vi\u1ebft 'Speculative Retrieval-Augmented Generation for Cost-Efficient Large Language Model Inference' \u0111\u01b0\u1ee3c xu\u1ea5t b\u1ea3n v\u00e0o ng\u00e0y n\u00e0o?",
+    "ground_truth": "2026-05-06",
+    "ground_truth_doc_ids": [
+      "10.55041/isjem07213"
+    ]
+  }
+]

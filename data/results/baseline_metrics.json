@@ -1,0 +1,7 @@
+{
+  "samples": 12,
+  "retrieval_hit_rate": 1.0,
+  "mean_token_f1": 0.06681114047827749,
+  "judge_accuracy": 0.0,
+  "mean_judge_score": 1
+}
