@@ -1,0 +1,27 @@
+{
+  "baseline": {
+    "samples": 12,
+    "retrieval_hit_rate": 1.0,
+    "mean_token_f1": 0.06681114047827749,
+    "judge_accuracy": 0.0,
+    "mean_judge_score": 1
+  },
+  "corrupted": {
+    "samples": 12,
+    "retrieval_hit_rate": 0.75,
+    "mean_token_f1": 0.06523665790675448,
+    "judge_accuracy": 0.0,
+    "mean_judge_score": 1
+  },
+  "repaired": {
+    "samples": 12,
+    "retrieval_hit_rate": 1.0,
+    "mean_token_f1": 0.06838577065000993,
+    "judge_accuracy": 0.0,
+    "mean_judge_score": 1
+  },
+  "recovery": {
+    "retrieval_hit_rate": 1.0,
+    "mean_token_f1": 2.0001
+  }
+}

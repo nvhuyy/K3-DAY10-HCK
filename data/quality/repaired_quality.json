@@ -1,0 +1,19 @@
+{
+  "report_name": "repaired_quality.json",
+  "row_count": 24,
+  "completeness": {
+    "paper_id": 1.0,
+    "title": 1.0,
+    "summary": 1.0
+  },
+  "uniqueness": {
+    "paper_id_unique": true,
+    "duplicate_paper_ids": 0
+  },
+  "freshness": {
+    "stale_rows": 0,
+    "freshness_threshold_days": 180,
+    "max_age_days": 161,
+    "is_fresh": true
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "seed": 42,
+  "input_row_count": 24,
+  "output_row_count": 24,
+  "config": {
+    "missing_summary_fraction": 0.15,
+    "stale_date_fraction": 0.15,
+    "noisy_text_fraction": 0.1,
+    "duplicate_fraction": 0.1,
+    "drop_fraction": 0.1,
+    "stale_years": 10,
+    "noise_token": "[NOISE]",
+    "seed": 42
+  },
+  "operations": [
+    {
+      "type": "missing_summary",
+      "paper_id": "10.1093/sleep/zsag091.0346",
+      "before_length": 2491,
+      "after_length": 0
+    },
+    {
+      "type": "missing_summary",
+      "paper_id": "10.1145/3805774",
+      "before_length": 1282,
+      "after_length": 0
+    },
+    {
+      "type": "missing_summary",
+      "paper_id": "10.32473/flairs.39.1.141782",
+      "before_length": 2371,
+      "after_length": 0
+    },
+    {
+      "type": "stale_date",
+      "paper_id": "10.1145/3805774",
+      "before": "2026-09-30",
+      "after": "2016-09-30"
+    },
+    {
+      "type": "stale_date",
+      "paper_id": "10.3389/fmed.2026.1817215",
+      "before": "2026-05-08",
+      "after": "2016-05-08"
+    },
+    {
+      "type": "stale_date",
+      "paper_id": "10.55041/isjem07213",
+      "before": "2026-05-06",
+      "after": "2016-05-06"
+    },
+    {
+      "type": "noisy_text",
+      "paper_id": "10.54254/2753-8818/2026.dl34055",
+      "before_length": 1569,
+      "after_length": 3156
+    },
+    {
+      "type": "noisy_text",
+      "paper_id": "10.3390/app16052244",
+      "before_length": 1575,
+      "after_length": 3168
+    },
+    {
+      "type": "duplicate_record",
+      "paper_id": "10.32473/flairs.39.1.141782"
+    },
+    {
+      "type": "duplicate_record",
+      "paper_id": "10.3390/app16052244"
+    },
+    {
+      "type": "dropped_record",
+      "paper_id": "10.1007/s10115-026-02792-4"
+    },
+    {
+      "type": "dropped_record",
+      "paper_id": "10.1007/s10278-026-02086-9"
+    }
+  ],
+  "summary": {
+    "missing_summary_count": 3,
+    "stale_date_count": 3,
+    "noisy_text_count": 2,
+    "duplicate_count": 2,
+    "dropped_count": 2
+  }
+}

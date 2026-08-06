@@ -60,25 +60,51 @@ def generate_corruption_report(
 ) -> None:
     """Write a markdown report comparing baseline, corrupted, and repaired results."""
     report_path = Path(report_path)
+    
+    def format_metric(b, c, r, name):
+        try:
+            b_val = float(b.get(name, 0))
+            c_val = float(c.get(name, 0))
+            r_val = float(r.get(name, 0))
+            c_delta = c_val - b_val
+            r_delta = r_val - b_val
+            
+            if (b_val - c_val) != 0:
+                rec = (r_val - c_val) / (b_val - c_val)
+                rec_str = f"{rec:.2%}"
+            else:
+                rec_str = "N/A"
+                
+            return f"| {name} | {b_val:.3f} | {c_val:.3f} | {r_val:.3f} | {c_delta:+.3f} | {r_delta:+.3f} | {rec_str} |"
+        except Exception:
+            return f"| {name} | N/A | N/A | N/A | N/A | N/A | N/A |"
+
     lines = [
         "# Corruption Comparison Report",
         "",
-        "## Baseline",
-        f"- Retrieval hit rate: {baseline_metrics.get('retrieval_hit_rate', 0):.3f}",
-        f"- Mean token F1: {baseline_metrics.get('mean_token_f1', 0):.3f}",
+        "## RAG Evaluation Comparison",
+        "| Metric | Baseline | Corrupted | Repaired | Corrupted Δ | Repaired Δ | Recovery |",
+        "|---|---:|---:|---:|---:|---:|---:|",
+        format_metric(baseline_metrics, corrupted_metrics, repaired_metrics, "retrieval_hit_rate"),
+        format_metric(baseline_metrics, corrupted_metrics, repaired_metrics, "mean_token_f1"),
+        format_metric(baseline_metrics, corrupted_metrics, repaired_metrics, "judge_accuracy"),
+        format_metric(baseline_metrics, corrupted_metrics, repaired_metrics, "mean_judge_score"),
         "",
-        "## Corrupted",
-        f"- Retrieval hit rate: {corrupted_metrics.get('retrieval_hit_rate', 0):.3f}",
-        f"- Mean token F1: {corrupted_metrics.get('mean_token_f1', 0):.3f}",
-        f"- Freshness status: {'fresh' if corrupted_freshness.get('is_fresh') else 'needs attention'}",
+        "## Data Quality Comparison",
+        "### Row count",
+        f"- Corrupted: {corrupted_quality.get('row_count', 'N/A')}",
+        f"- Repaired: {repaired_quality.get('row_count', 'N/A')}",
         "",
-        "## Repaired",
-        f"- Retrieval hit rate: {repaired_metrics.get('retrieval_hit_rate', 0):.3f}",
-        f"- Mean token F1: {repaired_metrics.get('mean_token_f1', 0):.3f}",
-        f"- Freshness status: {'fresh' if repaired_freshness.get('is_fresh') else 'needs attention'}",
+        "### Freshness Status",
+        f"- Corrupted: {'fresh' if corrupted_freshness.get('is_fresh') else 'needs attention'} (Stale rows: {corrupted_freshness.get('stale_rows', 0)})",
+        f"- Repaired: {'fresh' if repaired_freshness.get('is_fresh') else 'needs attention'} (Stale rows: {repaired_freshness.get('stale_rows', 0)})",
         "",
-        "## Quality Notes",
-        f"- Corrupted quality: {corrupted_quality}",
-        f"- Repaired quality: {repaired_quality}",
+        "## Detailed Quality Notes",
+        "**Corrupted Quality:**",
+        f"```json\n{corrupted_quality}\n```",
+        "",
+        "**Repaired Quality:**",
+        f"```json\n{repaired_quality}\n```",
     ]
     write_text(report_path, "\n".join(lines) + "\n")
+
